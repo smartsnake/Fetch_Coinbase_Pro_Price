@@ -1,0 +1,8 @@
+{
+    "mongo_url":"localhost",
+    "mongo_port":"27017",
+    "database":"Coinbase_Pro",
+    "collection":"BTC_USD",
+    "end_file":"program.end",
+    "currency":"BTC-USD"
+}

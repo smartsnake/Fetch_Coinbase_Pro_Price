@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import time
 from os import path
+import os
 import json
 
 with open('config.json') as json_data_file:
@@ -10,7 +11,8 @@ with open('config.json') as json_data_file:
 print(data)
 
 public_client = cbpro.PublicClient()
-client = MongoClient(data['mongo_url'], int(data['mongo_port']))
+client = MongoClient(os.environ['MONGODB_HOST'],
+            27017)
 
 db = client[data['database']]
 collection = db[data['collection']]

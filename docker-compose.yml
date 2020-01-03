@@ -1,0 +1,17 @@
+version: '3'
+services:
+    fetch_coinbase_price:
+        build: ./
+        restart: always
+        ports:
+            - "80:80"
+            - "8080:8080"
+        links:
+            - mongo
+        environment:
+            MONGODB_HOST: mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - "27017:27017"
